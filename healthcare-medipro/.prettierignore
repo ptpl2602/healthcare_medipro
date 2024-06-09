@@ -1,0 +1,33 @@
+# Ignore artifacts:
+.vscode
+.github
+build
+coverage
+node_modules
+**/.next/**
+**/_next/**
+**/dist/**
+**/__tmp__/**
+lerna.json
+out
+
+# Ignore all HTML files:
+**/*.html
+
+## Please check .eslintignore and .gitignore when changing this file
+
+## file extensions
+*.*
+!*.css
+!*.js
+!*.json
+!*.jsx
+!*.less
+!*.md
+!*.mdx
+!*.ts
+!*.tsx
+!*.yml
+
+## copied from .gitignore
+[a few paths]
