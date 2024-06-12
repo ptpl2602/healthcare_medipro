@@ -1,6 +1,8 @@
 import Image from "next/image";
+import {useTranslations} from 'next-intl';
 
 export default function Home() {
+  const t = useTranslations('Index');
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -24,7 +26,8 @@ export default function Home() {
               height={24}
               priority
             />
-          </a>
+          </a>  
+          <h1>{t('title')}</h1>
         </div>
       </div>
 
