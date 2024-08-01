@@ -1,4 +1,4 @@
-﻿namespace HealthCare.Services.CatalogAPI.Models
+﻿namespace HealthCare.Services.CatalogAPI.Domain
 {
     public class Specializations
     {

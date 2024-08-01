@@ -3,6 +3,7 @@ using HealthCare.Services.CatalogAPI.Features.Doctor.CreateDoctor;
 
 namespace HealthCare.Services.CatalogAPI.Features.Doctor.UpdateDoctor
 {
+    #region Record Update Doctor
     public record UpdateDoctorRequest(
         Guid Id,
         string FirstName,
@@ -20,6 +21,9 @@ namespace HealthCare.Services.CatalogAPI.Features.Doctor.UpdateDoctor
         List<string> SpecializationId
     );
     public record UpdateDoctorResponse(bool IsSuccess);
+
+    #endregion
+
     public class UpdateDoctorEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)

@@ -1,14 +1,24 @@
 ﻿namespace HealthCare.Services.CatalogAPI.Features.Doctor.DeleteDoctor
 {
+    #region Record Delete Doctor
     public record DeleteDoctorCommand(Guid Id) : ICommand<DeleteDoctorResult>;
     public record DeleteDoctorResult(bool IsSuccess);
-    public class DeleteDoctorHandler(IDocumentSession session) : ICommandHandler<DeleteDoctorCommand, DeleteDoctorResult>
+    #endregion
+    
+    public class DeleteDoctorHandler : ICommandHandler<DeleteDoctorCommand, DeleteDoctorResult>
     {
+        private readonly IDocumentSession _session;
+
+        public DeleteDoctorHandler(IDocumentSession session)
+        {
+            _session = session;
+        }
+
         public async Task<DeleteDoctorResult> Handle(DeleteDoctorCommand command, CancellationToken cancellationToken)
         {
-            session.Delete<Doctors>(command.Id);
+            _session.Delete<Doctors>(command.Id);
 
-            await session.SaveChangesAsync(cancellationToken);
+            await _session.SaveChangesAsync(cancellationToken);
 
             return new DeleteDoctorResult(true);
         }

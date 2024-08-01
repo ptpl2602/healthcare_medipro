@@ -1,4 +1,4 @@
-﻿namespace HealthCare.Services.CatalogAPI.Models
+﻿namespace HealthCare.Services.CatalogAPI.Domain
 {
     public class Doctors
     {
@@ -16,5 +16,6 @@
         public string? Description { get; set; } = default;
         public string? Note { get; set; } = default;
         public List<string> SpecializationId { get; set; }
+        public List<Specializations> Specializations { get; set; }
     }
 }
