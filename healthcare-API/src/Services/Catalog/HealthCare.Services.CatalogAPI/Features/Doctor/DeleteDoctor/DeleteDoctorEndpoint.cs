@@ -1,7 +1,9 @@
 ﻿
 namespace HealthCare.Services.CatalogAPI.Features.Doctor.DeleteDoctor
 {
+    #region Record Delete Doctor
     public record DeleteDoctorResponse(bool IsSuccess);
+    #endregion
     public class DeleteDoctorEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)

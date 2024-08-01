@@ -1,8 +1,7 @@
 ﻿
-using HealthCare.Services.CatalogAPI.Exceptions;
-
 namespace HealthCare.Services.CatalogAPI.Features.Doctor.UpdateDoctor
 {
+    #region Record Update Doctor
     public record UpdateDoctorCommand(
         Guid Id,
         string FirstName,
@@ -21,6 +20,9 @@ namespace HealthCare.Services.CatalogAPI.Features.Doctor.UpdateDoctor
     ) : ICommand<UpdateDoctorResult>;
     public record UpdateDoctorResult(bool IsSuccess);
 
+    #endregion
+
+
     public class UpdateDoctorCommandValidator : AbstractValidator<UpdateDoctorCommand>
     {
         public UpdateDoctorCommandValidator()
@@ -33,11 +35,18 @@ namespace HealthCare.Services.CatalogAPI.Features.Doctor.UpdateDoctor
                 .Length(2, 150).WithMessage("Name must be between 2 and 150 characters");
         }
     }
-    public class UpdateDoctorHandler(IDocumentSession session) : ICommandHandler<UpdateDoctorCommand, UpdateDoctorResult>
+    public class UpdateDoctorHandler : ICommandHandler<UpdateDoctorCommand, UpdateDoctorResult>
     {
+        private readonly IDocumentSession _session;
+
+        public UpdateDoctorHandler(IDocumentSession session)
+        {
+            _session = session;
+        }
+
         public async Task<UpdateDoctorResult> Handle(UpdateDoctorCommand command, CancellationToken cancellationToken)
         {
-            var doctor = await session.LoadAsync<Doctors>(command.Id, cancellationToken);
+            var doctor = await _session.LoadAsync<Doctors>(command.Id, cancellationToken);
             if(doctor is null)
             {
                 throw new DoctorNotFoundException(command.Id);
@@ -56,8 +65,8 @@ namespace HealthCare.Services.CatalogAPI.Features.Doctor.UpdateDoctor
             doctor.WorkPlace = command.WorkPlace;
             doctor.Note = command.Note;
 
-            session.Update(doctor);
-            await session.SaveChangesAsync(cancellationToken);
+            _session.Update(doctor);
+            await _session.SaveChangesAsync(cancellationToken);
 
             return new UpdateDoctorResult(true);
         }

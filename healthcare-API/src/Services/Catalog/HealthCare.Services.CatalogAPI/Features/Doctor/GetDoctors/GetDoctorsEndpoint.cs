@@ -1,7 +1,9 @@
 ﻿namespace HealthCare.Services.CatalogAPI.Features.Doctor.GetDoctors
 {
+    #region Record Get Doctors
     public record GetDoctorsRequest(int? PageNumber = 1, int? PageSize = 10);
     public record GetDoctorsResponse(IEnumerable<Doctors> Doctors);
+    #endregion
 
     public class GetDoctorsEndpoint : ICarterModule
     {

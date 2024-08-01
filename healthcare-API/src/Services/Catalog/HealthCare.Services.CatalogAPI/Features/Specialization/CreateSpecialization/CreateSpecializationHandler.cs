@@ -13,8 +13,15 @@ namespace HealthCare.Services.CatalogAPI.Features.Specialization.CreateSpecializ
         }
     }
 
-    public class CreateSpecializationHandler(IDocumentSession session) : ICommandHandler<CreateSpecializationCommand, CreateSpecializationResult>
+    public class CreateSpecializationHandler : ICommandHandler<CreateSpecializationCommand, CreateSpecializationResult>
     {
+        private readonly IDocumentSession _session;
+
+        public CreateSpecializationHandler(IDocumentSession session)
+        {
+            _session = session;
+        }
+
         public async Task<CreateSpecializationResult> Handle(CreateSpecializationCommand command, CancellationToken cancellationToken)
         {
             var specialization = new Specializations
@@ -23,8 +30,8 @@ namespace HealthCare.Services.CatalogAPI.Features.Specialization.CreateSpecializ
                 Description = command.Description,
                 ImageUrl = command.ImageUrl
             };
-            session.Store(specialization);
-            await session.SaveChangesAsync(cancellationToken);
+            _session.Store(specialization);
+            await _session.SaveChangesAsync(cancellationToken);
             return new CreateSpecializationResult(specialization.Id);
         }
     }
