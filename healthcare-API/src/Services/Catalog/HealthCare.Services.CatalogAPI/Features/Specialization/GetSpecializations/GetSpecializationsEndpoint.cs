@@ -1,6 +1,8 @@
 ﻿namespace HealthCare.Services.CatalogAPI.Features.Specialization.GetSpecializations
 {
+    #region Record Get Specialization
     public record GetSpecializationsResponse(IEnumerable<Specializations> Specializations);
+    #endregion
 
     public class GetSpecializationsEndpoint : ICarterModule
     {

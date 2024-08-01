@@ -1,8 +1,8 @@
-﻿namespace HealthCare.Services.CatalogAPI.Models
+﻿namespace HealthCare.Services.CatalogAPI.Domain
 {
-    public class HospitalSpecialization
+    public class HospitalSpecializations
     {
-        public string Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public Guid HospitalId { get; set; }
         public string? Description { get; set; }

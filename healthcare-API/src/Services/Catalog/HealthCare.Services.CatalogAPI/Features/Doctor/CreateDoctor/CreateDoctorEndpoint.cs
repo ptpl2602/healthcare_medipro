@@ -1,5 +1,6 @@
 ﻿namespace HealthCare.Services.CatalogAPI.Features.Doctor.CreateDoctor
 {
+    #region Record Create Doctor
     public record CreateDoctorRequest(
         string FirstName,
         string LastName,
@@ -17,6 +18,9 @@
     );
 
     public record CreateDoctorResponse(Guid Id);
+
+    #endregion
+
     public class CreateDoctorEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)

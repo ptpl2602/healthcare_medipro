@@ -2,6 +2,7 @@
 
 namespace HealthCare.Services.CatalogAPI.Features.Doctor.CreateDoctor
 {
+    #region Record Create Doctor
     public record CreateDoctorCommand(
         string FirstName,
         string LastName,
@@ -19,6 +20,8 @@ namespace HealthCare.Services.CatalogAPI.Features.Doctor.CreateDoctor
     ) : ICommand<CreateDoctorResult>;
     public record CreateDoctorResult(Guid Id);
 
+    #endregion
+
     public class CreateDoctorCommandValidator : AbstractValidator<CreateDoctorCommand>
     {
         public CreateDoctorCommandValidator()
@@ -35,8 +38,15 @@ namespace HealthCare.Services.CatalogAPI.Features.Doctor.CreateDoctor
         }
     }
 
-    internal class CreateDoctorCommandHandler(IDocumentSession session) : ICommandHandler<CreateDoctorCommand, CreateDoctorResult>
+    internal class CreateDoctorCommandHandler : ICommandHandler<CreateDoctorCommand, CreateDoctorResult>
     {
+        private readonly IDocumentSession _session;
+
+        public CreateDoctorCommandHandler(IDocumentSession session)
+        {
+            _session = session;
+        }
+
         public async Task<CreateDoctorResult> Handle(CreateDoctorCommand command, CancellationToken cancellationToken)
         {
             var doctor = new Doctors
@@ -55,8 +65,8 @@ namespace HealthCare.Services.CatalogAPI.Features.Doctor.CreateDoctor
                 WorkPlace = command.WorkPlace,
                 Note = command.Note,
             };
-            session.Store(doctor);
-            await session.SaveChangesAsync(cancellationToken);
+            _session.Store(doctor);
+            await _session.SaveChangesAsync(cancellationToken);
             return new CreateDoctorResult(doctor.Id);
         }
     }

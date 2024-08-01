@@ -1,10 +1,9 @@
-﻿
-using HealthCare.Services.CatalogAPI.Features.Doctor.GetDoctors;
-using System.Xml.Linq;
-
-namespace HealthCare.Services.CatalogAPI.Features.Doctor.GetDoctorById
+﻿namespace HealthCare.Services.CatalogAPI.Features.Doctor.GetDoctorById
 {
+    #region Record Get Doctor By Id
     public record GetDoctorByIdResponse(Doctors Doctor);
+    #endregion
+    
     public class GetDoctorByIdEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)

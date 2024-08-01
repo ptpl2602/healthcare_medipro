@@ -1,6 +1,4 @@
 using HealthChecks.UI.Client;
-using Microsoft.AspNetCore.Mvc;
-using OpenTelemetry.Trace;
 
 var builder = WebApplication.CreateBuilder(args);
 

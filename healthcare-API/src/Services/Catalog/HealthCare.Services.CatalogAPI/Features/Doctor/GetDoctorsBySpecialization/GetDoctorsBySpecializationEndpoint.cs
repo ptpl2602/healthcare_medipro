@@ -1,8 +1,12 @@
 ﻿namespace HealthCare.Services.CatalogAPI.Features.Doctor.GetDoctorsBySpecialization
 {
+    #region Record Get Doctors By Specialization
     public record GetDoctorsBySpecializationRequest(int? PageNumber = 1, int? PageSize = 10);
 
     public record GetDoctorsBySpecializationResponse(IEnumerable<Doctors> Doctors);
+    
+    #endregion
+    
     public class GetDoctorsBySpecializationEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)
