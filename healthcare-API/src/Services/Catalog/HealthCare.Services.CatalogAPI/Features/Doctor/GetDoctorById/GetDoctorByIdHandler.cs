@@ -19,7 +19,7 @@
 
             if(doctor is null)
             {
-                throw new Exceptions.DoctorNotFoundException(query.Id);
+                throw new DoctorNotFoundException(query.Id);
             }
 
             var specializationDetail = doctor.SpecializationId.Select(Guid.Parse).ToList();

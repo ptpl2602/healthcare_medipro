@@ -1,13 +1,23 @@
 using HealthChecks.UI.Client;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
+// Add Swagger documentation
+builder.Services.ConfigureSwaggerGen(options =>
+{
+    options.DescribeAllParametersInCamelCase();
+});
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "HealthCare.Services.Catalog API", Version = "v1", Description = "This is Restful API to support HealthCare." });
+});
+
+// Add MediatR
 builder.Services.AddMediatR(config =>
 {
     config.RegisterServicesFromAssembly(typeof(Program).Assembly);
