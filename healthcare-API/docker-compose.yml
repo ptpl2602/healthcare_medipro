@@ -4,5 +4,11 @@ services:
   catalogdb:
     image: postgres
 
+  healthcare.services.catalogapi:
+    image: ${DOCKER_REGISTRY-}healthcareservicescatalogapi
+    build:
+      context: .
+      dockerfile: src/Services/Catalog/HealthCare.Services.CatalogAPI/Dockerfile
+
 volumes:
   postgres_catalog:
