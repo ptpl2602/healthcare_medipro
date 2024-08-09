@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuildingBlocks", "src\Build
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A509BB73-2BC1-4F30-9317-838FC8BCCE09}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{840B9C11-1DC9-4DBC-B129-54CA0ED24483}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCare.Services.IdentityAPI", "src\Services\Identity\HealthCare.Services.IdentityAPI\HealthCare.Services.IdentityAPI.csproj", "{D7876DF0-4ACE-4F7D-9775-4AE8D3FC9A73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +39,10 @@ Global
 		{A509BB73-2BC1-4F30-9317-838FC8BCCE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A509BB73-2BC1-4F30-9317-838FC8BCCE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A509BB73-2BC1-4F30-9317-838FC8BCCE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7876DF0-4ACE-4F7D-9775-4AE8D3FC9A73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7876DF0-4ACE-4F7D-9775-4AE8D3FC9A73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7876DF0-4ACE-4F7D-9775-4AE8D3FC9A73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7876DF0-4ACE-4F7D-9775-4AE8D3FC9A73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +51,8 @@ Global
 		{4AF3AA05-2E7C-41DC-9F88-294C923365A3} = {FDB65A95-AEC8-4E0F-9D6B-F25718FACC38}
 		{620930AF-351D-4C67-B508-0D3C742776C1} = {4AF3AA05-2E7C-41DC-9F88-294C923365A3}
 		{5DA004FB-89D3-4B90-AD73-326E1A19ABE2} = {41170E7F-1B79-4ED0-BE5F-1C792940399B}
+		{840B9C11-1DC9-4DBC-B129-54CA0ED24483} = {FDB65A95-AEC8-4E0F-9D6B-F25718FACC38}
+		{D7876DF0-4ACE-4F7D-9775-4AE8D3FC9A73} = {840B9C11-1DC9-4DBC-B129-54CA0ED24483}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA71EB68-2A01-4B30-A232-2FCEBC76D32C}
