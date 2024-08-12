@@ -5,6 +5,7 @@ import '@/styles/globals.css';
 import { getMessages } from 'next-intl/server';
 import { cn } from '@/lib/utils';
 import { ThemeProvider } from 'next-themes';
+import NavBar from '@/components/Navbar';
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -29,9 +30,14 @@ const RootLayout: React.FC<Props> = async ({ children, params: { locale } }) => 
 
   return (
     <html lang={locale}>
-      <body className={cn('min-h-screen bg-white-200 font-sans antialiased', fontSans.variable)}>
+      <body className={cn('min-h-screen font-sans antialiased', fontSans.variable)}>
         <ThemeProvider attribute='class' defaultTheme='light' enableSystem disableTransitionOnChange>
-          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>
+            <NavBar/>
+            <main>
+              {children}
+            </main>
+          </NextIntlClientProvider>
         </ThemeProvider>
       </body>
     </html>

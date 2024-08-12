@@ -51,8 +51,19 @@ export const PATH_NAMES = Object.freeze({
     CLIENT_INFORMATION: '/book-online/client-information',
     CONFIRM_APPOINTMENT: '/book-online/confirm-appointment',
     CONFIRMED_APPOINTMENT: '/book-online/confirmed-appointment'
-  },
+  }
 });
+
+export const NAV_LINKS = [
+  { href: '/consultation-online', key: 'Consultation_Onl' },
+  { href: '/medical-news', key: 'Medical_News' },
+  { href: '/forum', key: 'Forum' }
+];
+
+export const NAV_BOOKING_LINKS = [
+  { href: '/booking-doctor', title: 'Booking.booking_doctor', description: 'Booking.booking_doctor_description' },
+  { href: '/booking-hospital', title: 'Booking.booking_hospital', description: 'Booking.booking_hospital_description' }
+];
 
 export const PASSWORD_MIN_LENGTH = 8;
 
