@@ -1,0 +1,24 @@
+{
+  "Index": {
+    "description": "- Đặt lịch khám bệnh viện, bác sĩ online"
+  },
+  "Navbar": {
+    "Language": {
+      "Vietnamese": "Tiếng Việt",
+      "English": "Tiếng Anh"
+    },
+    "Booking": {
+      "booking_online": "Đặt khám",
+      "booking_doctor": "Đặt khám bác sĩ",
+      "booking_doctor_description": "Đặt lịch khám không chờ đợi",
+      "booking_hospital": "Đặt khám bệnh viện",
+      "booking_hospital_description": "Đặt khám, thanh toán, và nhận kết quả",
+      "assistance": "Bạn cần hỗ trợ? Gọi cho chúng tôi tại"
+    },
+    "Consultation_Onl": "Tư vấn trực tuyến",
+    "Medical_News": "Tin tức y tế",
+    "Forum": "Diễn đàn",
+    "Login_Professionals": "Dành cho nhân viên y tế",
+    "Login": "Đăng nhập"
+  }
+}
