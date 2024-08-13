@@ -4,12 +4,16 @@
     "description": "- Book hospital and doctor appointments online"
   },
   "Navbar": {
+    "Language": {
+      "Vietnamese": "Vietnamese",
+      "English": "English"
+    },
     "Booking": {
       "booking_online": "Booking",
       "booking_doctor": "Book Doctor Appointment",
-      "booking_doctor_description": "Book Appointments Without Waiting",
+      "booking_doctor_description": "Book appointments without waiting",
       "booking_hospital": "Book Hospital Appointment",
-      "booking_hospital_description": "Book Appointments, Make Payments, and Receive Results",
+      "booking_hospital_description": "Book appointments, make payments, and receive results",
       "assistance": "Need assistance? Call us at"
     },
     "Consultation_Onl": "Online Consultation",

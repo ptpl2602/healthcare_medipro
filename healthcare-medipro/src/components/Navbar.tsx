@@ -1,26 +1,22 @@
 'use client';
-import { NAV_BOOKING_LINKS, NAV_LINKS } from '@/constants';
+
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger
-} from './ui/navigation-menu';
-import ListItem from './common/ListItem';
-import { Button } from './ui/button';
-import ModeToggle from './common/ModeToggle';
+import { NAV_BOOKING_LINKS, NAV_LINKS } from '@/constants';
+import { Button } from '@/components/ui/button';
+import ModeToggle from '@/components/common/ModeToggle';
+import LanguageToggle from '@/components/common/LanguageToggle';
+import Navigation from '@/components/common/Navigation';
 
 
 const linkClassName = 'text-14-semibold text-foreground hover:bg-secondary hover:text-primary cursor-pointer p-4 rounded-lg lg:py-2.5 lg:mx-2';
+
 const NavBar = () => {
   const t = useTranslations('Navbar');
 
   return (
-    <nav className='fixed top-0 w-full flex-between mx-auto px-6 lg:px-12 3xl:px-0 z-30 transition-all duration-300 ease-in-out py-3'>
+    <nav className='fixed top-0 w-full flex-between mx-auto px-6 lg:px-10 3xl:px-0 z-30 transition-all duration-300 ease-in-out py-3'>
       <Link href='/'>
         <Image
           src='assets/icons/Logo.svg'
@@ -31,23 +27,18 @@ const NavBar = () => {
         ></Image>
       </Link>
 
-      <ul className='hidden h-full gap-3 lg:flex'>
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className='text-sm font-semibold text-foreground hover:bg-secondary hover:text-primary cursor-pointer p-4 rounded-lg lg:py-2 lg:mx-2'>{t('Booking.booking_online')}</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className='w-[200px] p-1.5 md:w-[300px] lg:w-[350px] mt-2'>
-                  {NAV_BOOKING_LINKS.map((link) => (
-                    <ListItem key={link.title} title={t(link.title)} href={link.href}>
-                      {t(link.description)}
-                    </ListItem>
-                  ))}
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+      <ul className='hidden h-full gap-1.5 lg:flex'>
+        <Navigation
+          title={t('Booking.booking_online')}
+          links={NAV_BOOKING_LINKS.map(link => ({
+            ...link,
+            title: t(link.title),
+            description: t(link.description),
+            href: link.href
+          }))}
+          className='text-sm font-semibold text-foreground hover:bg-secondary hover:text-primary cursor-pointer p-4 rounded-lg lg:py-2 lg:mx-2'
+          menuWidth='w-[350px]'
+        />
 
         {NAV_LINKS.map((link) => (
           <Link
@@ -59,23 +50,18 @@ const NavBar = () => {
           </Link>
         ))}
 
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuTrigger className='text-sm text-text-1 hover:bg-secondary hover:text-primary cursor-pointer p-4 rounded-lg lg:py-2 lg:mx-2'>{t('Login_Professionals')}</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className='w-[180px] p-0.5 mt-2'>
-                  <ListItem href='/contact-doctor-service' title='MediPro Doctor' className='font-normal'></ListItem>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
+        <Navigation
+          title={t('Login_Professionals')}
+          links={[{ title: 'MediPro Doctor', description:'', href: '/contact-doctor-service' }]}
+          className='text-sm text-text-1 hover:bg-secondary hover:text-primary cursor-pointer p-4 rounded-lg lg:py-2 lg:mx-2'
+          menuWidth='w-[180px]'
+        />
       </ul>
       
-      <div className='lg:flex-center hidden'>
-        <Button variant={'outline'} className='mr-4'>{t('Login')}</Button>
+      <div className='lg:flex-center gap-2.5 hidden'>
+        <LanguageToggle/>
         <ModeToggle/>
+        <Button variant={'outline'} className='font-semibold'>{t('Login')}</Button>
       </div>
     </nav>
   );

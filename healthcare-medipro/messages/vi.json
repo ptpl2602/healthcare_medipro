@@ -3,6 +3,10 @@
     "description": "- Đặt lịch khám bệnh viện, bác sĩ online"
   },
   "Navbar": {
+    "Language": {
+      "Vietnamese": "Tiếng Việt",
+      "English": "Tiếng Anh"
+    },
     "Booking": {
       "booking_online": "Đặt khám",
       "booking_doctor": "Đặt khám bác sĩ",

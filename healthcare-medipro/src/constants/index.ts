@@ -38,7 +38,9 @@ export const SELECT_APPOINTMENT = {
   minutesOfSection: 30
 };
 
-export const LOCALES = ['vi', 'en'];
+// LOCALE
+export const LOCALES = ['vi', 'en'] as const;
+export type Locale = (typeof LOCALES)[number];
 
 export const PATH_NAMES = Object.freeze({
   HOME: '/',
