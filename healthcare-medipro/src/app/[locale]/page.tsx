@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import { unstable_setRequestLocale } from 'next-intl/server';
+import Link from 'next/link';
 
 type HomepageProps = {
   params: {
@@ -14,9 +15,7 @@ export default function Homepage(props: HomepageProps) {
 
   const t = useTranslations();
   return (
-    <div className='flex h-screen max-h-screen'>
-      <section className='remove-scrollbar container my-auto'>
-      </section>
+    <div className=''>
     </div>
   );
 }

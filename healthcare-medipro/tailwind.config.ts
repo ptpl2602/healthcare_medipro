@@ -16,10 +16,17 @@ const config: Config = {
     extend: {
       colors: {
         border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
+        input: {
+          text: 'hsl(var(--input))',
+          background: 'hsl(var(--background-input))',
+          placeholder: 'hsl(var(--placeholder-input))',
+          border: 'hsl(var(--border-input))',
+          label: 'hsl(var(--label-input))'
+        },
         ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        loading: 'hsl(var(--loading))',
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))'
@@ -93,7 +100,7 @@ const config: Config = {
         'caret-blink': {
           '0%,70%,100%': { opacity: '1' },
           '20%,50%': { opacity: '0' }
-        }
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',

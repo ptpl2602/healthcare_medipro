@@ -21,5 +21,100 @@
     "Forum": "Forum",
     "Login_Professionals": "For Healthcare Professionals",
     "Login": "Login"
+  },
+  "Registration": {
+    "Full_name": "Full name",
+    "Phone_number": "Phone number",
+    "Send_otp": "Send OTP",
+    "Email": "Email",
+    "Password": {
+      "Placeholder": "Enter password",
+      "Header": "Password"
+    },
+    "Id_card_number": "ID card number",
+    "Login": "Login",
+    "Sign_up": "Sign up",
+    "Don't_have_an_account": "Don't have an account?",
+    "Sign_up_2": "Sign up",
+    "Forget_password": {
+      "Header": "Forget password?",
+      "Sub_header": "OTP code will be sent to this email",
+      "HasAccount": "Already have an account?",
+      "New_password_otp": "1. Authenticate",
+      "New_password_otp_button": "Continue",
+      "New_password_confirm": "2. Reset password",
+      "New_password_confirm_button": "Change password"
+    },
+    "Personal_info": "Personal Information",
+    "Additional_info": "Additional Information",
+    "Header": "Create a profile",
+    "Sub_header": "Creating a complete medical profile will better support your healthcare",
+    "Change_password": "Change password",
+    "Date_of_birth": {
+      "Header": "Date of birth",
+      "Placeholder": "Select your birth date"
+    },
+    "Gender": {
+      "Label": "Gender",
+      "Male": "Male",
+      "Female": "Female",
+      "Other": "Other"
+    },
+    "Address": {
+      "Detail": "Address detail",
+      "Province": "Province/City",
+      "District": "District",
+      "Ward": "Ward",
+      "Placeholder_province": "Choose province/city",
+      "Placeholder_district": "Choose district",
+      "Placeholder_ward": "Choose ward",
+      "Placeholder_address": "13 Street 5"
+    },
+    "Occupation": {
+      "Header": "Occupation",
+      "Placeholder": "Office staff v.v"
+    },
+    "Nationality": {
+      "Header": "Nationality",
+      "Placeholder": "American"
+    },
+    "Privacy_consent": {
+      "Header": "Consent and Privacy",
+      "Policy": "I acknowledge that I have reviewed and agree to the privacy policy",
+      "Infor_health": "I consent to the use and disclosure of my health information for treatment purposes."
+    },
+    "Passkey": {
+      "Title": "Authenticate",
+      "Description": "Enter the OTP code just sent to your email",
+      "Submit_button": "Continue"
+    }
+  },
+  "Validation": {
+    "Field_required": "{Field} is required!",
+    "Name": "Name must be at most 50 characters",
+    "Email": "Invalid email format!",
+    "Phone": "Invalid phone number",
+    "Id_card_number": {
+      "Max": "ID Card Number must be at most 12 digits",
+      "Invalid": "Invalid ID card number format"
+    },
+    "Address": {
+      "Province": "Please select province/city",
+      "District": "Please select district",
+      "Ward": "Please select ward"
+    },
+    "Privacy_consent": "You must consent to privacy in order to proceed",
+    "Password": "The password must be at least 8 characters long and include at least one uppercase letter, one number, and one special character",
+    "Occupation": "Occupation must be at most 50 characters",
+    "Nationality": ""
+  },
+  "Toast": {
+    "Success": "Success",
+    "Error": "Error",
+    "Code_sent": "Code sent to your email",
+    "Submit_error": "An error occurred while submitting the form. Please try again",
+    "Verification_success": "Authentication successful",
+    "Verification_error": "An error occurred while authenticating. Please try again",
+    "Invalid_code": "Please enter 6 digits"
   }
 }

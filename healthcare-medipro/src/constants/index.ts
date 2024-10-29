@@ -2,6 +2,7 @@ export const API_URL = 'http://11.11.7.84:3010/api';
 export const API_VERSION = 'v1';
 export const MAX_RETRIES = 3;
 export const TIMEOUT = 5000;
+export const API_ADDRESS_VN_URL = 'https://provinces.open-api.vn/api';
 
 export const HTTP_STATUS_CODE_SUCCESS = [
   200, // OK
@@ -18,6 +19,10 @@ export const HTTP_STATUS_CODE_SUCCESS = [
 
 export const EMAIL_REGEX = /^[a-zA-Z0-9]+([._-][a-zA-Z0-9]+)*@([a-zA-Z0-9]|[.-][a-zA-Z0-9])+\.[a-zA-Z]{2,4}$/;
 
+export const ID_CARDNUMBER_REGEX = /^0\d{9,11}$/;
+
+export const PASSWORD_REGEX = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+
 export const DATE_FORMAT = {
   eee: 'eee', // Mon
   MMMM: 'MMMM', // April
@@ -28,7 +33,8 @@ export const DATE_FORMAT = {
   yyyy_MM_dd: 'yyyy-MM-dd',
   yyyy_MM_dd_HH_mm_ss: 'yyyy-MM-dd HH:mm:ss', // 2024-04-01 00:00:00
   mm_dd_yyyy: 'MM/dd/yyyy', // 04/01/2024
-  MMMM_do_yyyy: 'MMMM do, yyyy'
+  MMMM_do_yyyy: 'MMMM do, yyyy',
+  dd_mm_yyyy: 'dd/MM/yyyy'
 };
 
 export const SELECT_APPOINTMENT = {
@@ -42,10 +48,23 @@ export const SELECT_APPOINTMENT = {
 export const LOCALES = ['vi', 'en'] as const;
 export type Locale = (typeof LOCALES)[number];
 
+//INPUT
+export enum FormFieldType {
+  INPUT = 'input',
+  TEXTAREA = 'textarea',
+  PHONE_INPUT = 'phoneInput',
+  CHECKBOX = 'checkbox',
+  DATE_PICKER = 'datePicker',
+  SELECT = 'select',
+  SKELETON = 'skeleton',
+  PASSWORD_INPUT = 'password',
+  OTP_INPUT = 'otp'
+}
+
 export const PATH_NAMES = Object.freeze({
   HOME: '/',
   LOGIN: '/login',
-  SIGN_UP: '/signup',
+  SIGN_UP: '/register',
   SERVICES: '/services',
   BOOK_ONLINE: {
     ROOT: '/book-online',
@@ -65,6 +84,12 @@ export const NAV_LINKS = [
 export const NAV_BOOKING_LINKS = [
   { href: '/booking-doctor', title: 'Booking.booking_doctor', description: 'Booking.booking_doctor_description' },
   { href: '/booking-hospital', title: 'Booking.booking_hospital', description: 'Booking.booking_hospital_description' }
+];
+
+export const GENDER = [
+  { value: 'male', labelKey: 'Registration.Gender.Male' },
+  { value: 'female', labelKey: 'Registration.Gender.Female' },
+  { value: 'other', labelKey: 'Registration.Gender.Other' }
 ];
 
 export const PASSWORD_MIN_LENGTH = 8;

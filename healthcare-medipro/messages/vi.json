@@ -20,5 +20,100 @@
     "Forum": "Diễn đàn",
     "Login_Professionals": "Dành cho nhân viên y tế",
     "Login": "Đăng nhập"
+  },
+  "Registration": {
+    "Full_name": "Họ tên",
+    "Phone_number": "Số điện thoại",
+    "Send_otp": "Gửi OTP",
+    "Email": "Email",
+    "Password": {
+      "Placeholder": "Nhập mật khẩu",
+      "Header": "Mật khẩu"
+    },
+    "Id_card_number": "Số căn cước công dân / Chứng minh nhân dân",
+    "Login": "Đăng nhập",
+    "Sign_up": "Đăng ký",
+    "Don't_have_an_account": "Chưa có tài khoản?",
+    "Sign_up_2": "Đăng ký ngay",
+    "Forget_password": {
+      "Header": "Quên mật khẩu?",
+      "Sub_header": "Mã OTP sẽ được gửi đến email này",
+      "HasAccount": "Đã có tài khoản?",
+      "New_password_otp": "1. Xác thực OTP",
+      "New_password_otp_button": "Tiếp tục",
+      "New_password_confirm": "2. Đặt lại mật khẩu",
+      "New_password_confirm_button": "Tạo mật khẩu"
+    },
+    "Personal_info": "Thông tin hồ sơ",
+    "Additional_info": "Thông tin bổ sung",
+    "Header": "Tạo hồ sơ",
+    "Sub_header": "Tạo hồ sơ y tế đầy đủ thông tin sẽ hỗ trợ khám chữa bệnh của bạn tốt hơn",
+    "Change_password": "Đổi mật khầu",
+    "Date_of_birth": {
+      "Header": "Ngày sinh",
+      "Placeholder": "Chọn ngày sinh"
+    },
+    "Gender": {
+      "Label": "Giới tính",
+      "Male": "Nam",
+      "Female": "Nữ",
+      "Other": "Khác"
+    },
+    "Address": {
+      "Detail": "Địa chỉ cụ thể",
+      "Province": "Tỉnh/Thành phố",
+      "District": "Quận/Huyện",
+      "Ward": "Phường/Xã",
+      "Placeholder_province": "Chọn tỉnh/thành phố",
+      "Placeholder_district": "Chọn quận/huyện",
+      "Placeholder_ward": "Chọn phường/xã",
+      "Placeholder_address": "115/17 Đường 5"
+    },
+    "Occupation": {
+      "Header": "Nghề nghiệp",
+      "Placeholder": "Nhân viên văn phòng v.v"
+    },
+    "Nationality": {
+      "Header": "Quốc tịch",
+      "Placeholder": "Việt Nam"
+    },
+    "Privacy_consent": {
+      "Header": "Chính sách bảo mật",
+      "Policy": "Tôi đã đọc và đồng ý với các điều khoản và điều kiện sử dụng",
+      "Infor_health": "Tôi đồng ý tiết lộ thông tin sức khỏe của mình cho mục đích điều trị"
+    },
+    "Passkey": {
+      "Title": "Xác thực OTP",
+      "Description": "Nhập mã OTP vừa được gửi đến email của bạn",
+      "Submit_button": "Tiếp tục"
+    }
+  },
+  "Validation": {
+    "Field_required": "Yêu cầu nhập đầy đủ {Field}",
+    "Name": "Tối đa có 50 ký tự trong tên",
+    "Email": "Email không hợp lệ",
+    "Phone": "Số điện thoại không hợp lệ",
+    "Id_card_number": {
+      "Max": "Tối đa 12 số",
+      "Invalid": "Số CCCD/CMND không hợp lệ"
+    },
+    "Address": {
+      "Province": "Vui lòng chọn tỉnh/thành phố",
+      "District": "Vui lòng chọn quận/huyện",
+      "Ward": "Vui lòng chọn phường/xã"
+    },
+    "Privacy_consent": "Bạn cần đồng ý để tiếp tục quá trình đăng ký tài khoản",
+    "Password": "Mật khẩu bắt buộc có 8 ký tự gồm chữ in hoa, số và ký tự đặc biệt",
+    "Occupation": "Tối đa có 50 ký tự trong nghề nghiệp",
+    "Nationality": "Must be at least 2 characters"
+  },
+  "Toast": {
+    "Success": "Thành công",
+    "Error": "Lỗi",
+    "Code_sent": "Mã xác thực đã được gửi đến email của bạn",
+    "Submit_error": "Có lỗi xảy ra khi gửi form. Vui lòng thử lại",
+    "Verification_success": "Xác thực thành công",
+    "Verification_error": "Có lỗi xảy ra khi xác thực. Vui lòng thử lại",
+    "Invalid_code": "Vui lòng nhập đủ 6 số"
   }
 }

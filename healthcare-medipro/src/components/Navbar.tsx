@@ -3,20 +3,26 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
-import { NAV_BOOKING_LINKS, NAV_LINKS } from '@/constants';
+import { NAV_BOOKING_LINKS, NAV_LINKS, PATH_NAMES } from '@/constants';
 import { Button } from '@/components/ui/button';
 import ModeToggle from '@/components/common/ModeToggle';
 import LanguageToggle from '@/components/common/LanguageToggle';
 import Navigation from '@/components/common/Navigation';
-
+import { useRouter } from 'next/navigation';
 
 const linkClassName = 'text-14-semibold text-foreground hover:bg-secondary hover:text-primary cursor-pointer p-4 rounded-lg lg:py-2.5 lg:mx-2';
 
 const NavBar = () => {
   const t = useTranslations('Navbar');
+  const router = useRouter();
+
+  const handleLogin = () => {
+    router.push(PATH_NAMES.LOGIN);
+    // router.push(PATH_NAMES.SIGN_UP);
+  }
 
   return (
-    <nav className='fixed top-0 w-full flex-between mx-auto px-6 lg:px-10 3xl:px-0 z-30 transition-all duration-300 ease-in-out py-3'>
+    <nav className='fixed top-0 w-full flex-between mx-auto px-4 lg:px-6 3xl:px-0 z-30 transition-all duration-300 ease-in-out py-3 bg-background'>
       <Link href='/'>
         <Image
           src='assets/icons/Logo.svg'
@@ -58,10 +64,10 @@ const NavBar = () => {
         />
       </ul>
       
-      <div className='lg:flex-center gap-2.5 hidden'>
+      <div className='lg:flex-center gap-2.5'>
         <LanguageToggle/>
         <ModeToggle/>
-        <Button variant={'outline'} className='font-semibold'>{t('Login')}</Button>
+        <Button variant={'outline'} className='font-semibold' onClick={handleLogin}>{t('Login')}</Button>
       </div>
     </nav>
   );
